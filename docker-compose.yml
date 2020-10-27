@@ -16,6 +16,8 @@ services:
         volumes:
             - ${SYMFONY_APP_PATH}:/var/www/ni
             - ./logs/symfony:/var/www/ni/var/log
+        links:
+            - db
     nginx:
         build: nginx
         ports:
