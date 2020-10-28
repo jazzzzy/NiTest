@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -49,10 +50,9 @@ class User implements UserInterface
     private $roles = [];
 
     /**
-     * Array
-     *
      * Many users have many purchased products.
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="products")
+     * @ORM\ManyToMany(targetEntity="Product", inversedBy="users")
+     * @ORM\JoinTable(name="purchase")
      */
     private $products;
 
@@ -129,6 +129,25 @@ class User implements UserInterface
     public function setPassword(string $password): User
     {
         $this->password = $password;
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getProducts(): Collection
+    {
+        return $this->products;
+    }
+
+    /**
+     * @param Product $product
+     * @return User
+     */
+    public function addProduct(Product $product): User
+    {
+        $this->products[] = $product;
+
         return $this;
     }
 

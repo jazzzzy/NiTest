@@ -31,11 +31,12 @@
     
 4. What's more I could add?
 
-    1. Validation (uuid could be validated)
-    2. Caching (Doctrine or memcache, maybe Redis)
-    3. Proper migrations
-    4. Logging
-    5. and many more
+    1. JWT keys should not be commited but generated on first deployment
+    2. Validation (uuid could be validated)
+    3. Caching (Doctrine or memcache, maybe Redis)
+    4. Proper migrations
+    5. Logging
+    6. and many more
     
     
 I hope the provided solution is sufficient, even though it doesn't cover everything.

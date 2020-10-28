@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity()
@@ -18,6 +19,7 @@ class Product
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Groups("product")
      */
     private $id;
 
@@ -25,6 +27,7 @@ class Product
      * @var string
      *
      * @ORM\Column(type="string", length=100, unique=true)
+     * @Groups({"product", "user_product"})
      */
     private $sku;
 
@@ -32,13 +35,14 @@ class Product
      * @var string
      *
      * @ORM\Column(type="string", length=100)
+     * @Groups({"product", "user_product"})
      */
     private $name;
 
     /**
      * Many products have been purchased by many users.
-     * @ORM\ManyToMany(targetEntity="User", inversedBy="products")
-     * @ORM\JoinTable(name="purchase")
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="products")
+     * @Groups("product")
      */
     private $users;
 
@@ -107,16 +111,5 @@ class Product
     {
         return $this->users;
     }
-
-    /**
-     * @param mixed $users
-     * @return Product
-     */
-    public function setUsers($users)
-    {
-        $this->users = $users;
-        return $this;
-    }
-
 
 }
