@@ -40,7 +40,11 @@ Here is my solution for the coding challenge. I could have used CSV parser for t
     Behat: vendor/bin/behat
     Unit: vendor/bin/phpunit
     
-5. What more I could add?
+5. To test the API e2e
+
+    Import the NI.postman_collection.json in Postman
+    
+6. What more I could add?
 
     1. Isolate test database.
     2. JWT private/public keys should not be committed but generated on first deployment
