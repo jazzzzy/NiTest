@@ -72,7 +72,8 @@ final class ImportDataCommand extends Command
         $firstUser = $userRepo->find(1);
 
         if ($firstUser) {
-            throw new \RuntimeException('This command should only be called once to initialize the database');
+            $output->writeln('This command should only be called once to initialize the database');
+            return 0;
         }
 
         foreach (self::DATA_MAPPER as $mapper) {
@@ -139,6 +140,6 @@ final class ImportDataCommand extends Command
             $this->entityManager->flush();
         }
 
-        return 1;
+        return 0;
     }
 }
