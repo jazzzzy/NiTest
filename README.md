@@ -10,7 +10,7 @@
 2. Update your system host file and add
 
     ```bash
-    symfony.dev to /etc/hosts
+    ni.local to /etc/hosts
     ```
     
     if you use Docker for Mac
@@ -29,14 +29,20 @@
     composer install
     ```
     
-4. What's more I could add?
+4. Tests
+    
+    Behat: vendor/bin/behat
+    Unit: vendor/bin/phpunit
+    
+5. What's more I could add?
 
-    1. JWT keys should not be commited but generated on first deployment
-    2. Validation (uuid could be validated)
-    3. Caching (Doctrine or memcache, maybe Redis)
-    4. Proper migrations
-    5. Logging
-    6. and many more
+    1. Isolate test database.
+    2. JWT private/public keys should not be committed but generated on first deployment
+    3. Validation (id could be validated)
+    4. Caching (Doctrine or memcache, maybe Redis)
+    5. Migration instead of import command
+    6. Improved logging
+    7. and many more
     
     
 I hope the provided solution is sufficient, even though it doesn't cover everything.

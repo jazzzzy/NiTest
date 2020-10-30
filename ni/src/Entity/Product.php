@@ -42,7 +42,6 @@ class Product
     /**
      * Many products have been purchased by many users.
      * @ORM\ManyToMany(targetEntity="User", mappedBy="products")
-     * @Groups("product")
      */
     private $users;
 

@@ -2,28 +2,26 @@
 
 namespace App\Controller;
 
-use App\Entity\Product;
+use App\Handler\ProductHandler;
+use App\ResponseBuilder\ErrorResponse;
+use App\ResponseBuilder\SuccessResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Serializer\SerializerInterface;
 
 class ProductController extends AbstractController
 {
     /**
      * @Route("/products", methods={"GET"})
      */
-    public function listProducts()
+    public function listProducts(ProductHandler $productHandler)
     {
-        $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
+        try {
+            $products = $productHandler->getAllProducts();
+        } catch (\Exception $e) {
+            return new ErrorResponse($e);
+        }
 
-        /** @var SerializerInterface $serializer */
-        $serializer = $this->get('serializer');
-        $productsArray = $serializer->normalize($products, 'array', ['groups' => ['product']]);
+        return new SuccessResponse($products);
 
-        return new JsonResponse(
-            $productsArray,
-            200
-        );
     }
 }

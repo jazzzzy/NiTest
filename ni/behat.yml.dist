@@ -1,0 +1,24 @@
+default:
+  formatters:
+    pretty:
+      verbose:  true
+      paths:    false
+      snippets: false
+  calls:
+    error_reporting: 16383 # E_ALL & ~E_USER_DREPRECATED
+  suites:
+    default:
+      paths:
+        - tests/functional
+      contexts:
+        - behatch:context:rest
+        - behatch:context:json
+        - Behat\MinkExtension\Context\MinkContext
+
+  extensions:
+    Behatch\Extension: ~
+    Behat\MinkExtension:
+      base_url: "http://nginx/"
+      sessions:
+        default:
+          goutte: ~

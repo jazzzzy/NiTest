@@ -137,7 +137,6 @@ final class ImportDataCommand extends Command
             $user->addProduct($product);
 
             $this->entityManager->flush();
-            $this->entityManager->clear();
         }
 
         return 1;
