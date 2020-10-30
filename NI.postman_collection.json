@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "59c44f71-2cf8-45e1-b5ba-931e239e3fac",
+		"name": "NI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NI Auth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"mac94@moen.com\",\"password\":\"secret\"}"
+				},
+				"url": {
+					"raw": "http://ni.local/auth",
+					"protocol": "http",
+					"host": [
+						"ni",
+						"local"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NI Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MDM4OTc2NzMsImV4cCI6MTYwMzkwMTI3Mywicm9sZXMiOltdLCJlbWFpbCI6Im1hYzk0QG1vZW4uY29tIn0.90m85xdqpvcwlsVpWwkOqJ6qFCn161XEv65ZInMnPvGcmTvtVelw59T2oyu7cFjHTWLUzhLeLSUogry7MtBpenJg32MPW-M_aQrxC6lTSC_kPOlzUfxPhjhm-TF1bE_z9x9G0jgXKi-wAipD2TMIpbwEfbW0fGrFA-DZJZT-az4vF04JMeyd41aewWv0C8qam7huFL_6XdiUDZmQEfNqEcW5tHaPV_oXsBbPsPnMZXXl56tM4i0EwDzEEplV82JzmlVt4dFUrpggn2IQ63Sa1sW8U6Owbp2V5EDGt-PdECdqB9ZFe8DQOsBtdAMTbf0hTdgRVFlJX034Ctk6_1u7E0WiJXc-h9-nS6ec_W4Au3sRyBXsJPjDKA2gvtt73lTIbC9kZsrBMl6JPGPc7G9cXrIb7ZodNk33AnKkI1kkgWze7d_CTmCb3QouVedA8VVi8alDqo3fSvciNefHxHe-BnsQGTFdu3xN1iRaDULfzHE3oXPpiHmhey7ycQtTicHKZS9dupo0xmG5ieE5g9DGs5UqKI9pGO89EHv1QQdl7V2gZN04pQB-WJ_EhMpph807amarxOlMtZuyJ8-R-On2LLy1bT9hbgK2U9nFOffWpxQxDiIw3CCliXEpD_9dZ-NWMJNlf1f0k3D31trmqdK_bJgsJx7KnBuvegN6POTEmQY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"test@gmail.com\",\"password\":\"password\"}"
+				},
+				"url": {
+					"raw": "http://ni.local/products",
+					"protocol": "http",
+					"host": [
+						"ni",
+						"local"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NI User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MDM4OTc2NzMsImV4cCI6MTYwMzkwMTI3Mywicm9sZXMiOltdLCJlbWFpbCI6Im1hYzk0QG1vZW4uY29tIn0.90m85xdqpvcwlsVpWwkOqJ6qFCn161XEv65ZInMnPvGcmTvtVelw59T2oyu7cFjHTWLUzhLeLSUogry7MtBpenJg32MPW-M_aQrxC6lTSC_kPOlzUfxPhjhm-TF1bE_z9x9G0jgXKi-wAipD2TMIpbwEfbW0fGrFA-DZJZT-az4vF04JMeyd41aewWv0C8qam7huFL_6XdiUDZmQEfNqEcW5tHaPV_oXsBbPsPnMZXXl56tM4i0EwDzEEplV82JzmlVt4dFUrpggn2IQ63Sa1sW8U6Owbp2V5EDGt-PdECdqB9ZFe8DQOsBtdAMTbf0hTdgRVFlJX034Ctk6_1u7E0WiJXc-h9-nS6ec_W4Au3sRyBXsJPjDKA2gvtt73lTIbC9kZsrBMl6JPGPc7G9cXrIb7ZodNk33AnKkI1kkgWze7d_CTmCb3QouVedA8VVi8alDqo3fSvciNefHxHe-BnsQGTFdu3xN1iRaDULfzHE3oXPpiHmhey7ycQtTicHKZS9dupo0xmG5ieE5g9DGs5UqKI9pGO89EHv1QQdl7V2gZN04pQB-WJ_EhMpph807amarxOlMtZuyJ8-R-On2LLy1bT9hbgK2U9nFOffWpxQxDiIw3CCliXEpD_9dZ-NWMJNlf1f0k3D31trmqdK_bJgsJx7KnBuvegN6POTEmQY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"test@gmail.com\",\"password\":\"password\"}"
+				},
+				"url": {
+					"raw": "http://ni.local/user",
+					"protocol": "http",
+					"host": [
+						"ni",
+						"local"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NI User Products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MDM4OTc2NzMsImV4cCI6MTYwMzkwMTI3Mywicm9sZXMiOltdLCJlbWFpbCI6Im1hYzk0QG1vZW4uY29tIn0.90m85xdqpvcwlsVpWwkOqJ6qFCn161XEv65ZInMnPvGcmTvtVelw59T2oyu7cFjHTWLUzhLeLSUogry7MtBpenJg32MPW-M_aQrxC6lTSC_kPOlzUfxPhjhm-TF1bE_z9x9G0jgXKi-wAipD2TMIpbwEfbW0fGrFA-DZJZT-az4vF04JMeyd41aewWv0C8qam7huFL_6XdiUDZmQEfNqEcW5tHaPV_oXsBbPsPnMZXXl56tM4i0EwDzEEplV82JzmlVt4dFUrpggn2IQ63Sa1sW8U6Owbp2V5EDGt-PdECdqB9ZFe8DQOsBtdAMTbf0hTdgRVFlJX034Ctk6_1u7E0WiJXc-h9-nS6ec_W4Au3sRyBXsJPjDKA2gvtt73lTIbC9kZsrBMl6JPGPc7G9cXrIb7ZodNk33AnKkI1kkgWze7d_CTmCb3QouVedA8VVi8alDqo3fSvciNefHxHe-BnsQGTFdu3xN1iRaDULfzHE3oXPpiHmhey7ycQtTicHKZS9dupo0xmG5ieE5g9DGs5UqKI9pGO89EHv1QQdl7V2gZN04pQB-WJ_EhMpph807amarxOlMtZuyJ8-R-On2LLy1bT9hbgK2U9nFOffWpxQxDiIw3CCliXEpD_9dZ-NWMJNlf1f0k3D31trmqdK_bJgsJx7KnBuvegN6POTEmQY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"test@gmail.com\",\"password\":\"password\"}"
+				},
+				"url": {
+					"raw": "http://ni.local/user/products",
+					"protocol": "http",
+					"host": [
+						"ni",
+						"local"
+					],
+					"path": [
+						"user",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NI User Products DELETE",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MDM5MTc0MzUsImV4cCI6MTYwMzkyMTAzNSwicm9sZXMiOltdLCJlbWFpbCI6Im1hYzk0QG1vZW4uY29tIn0.A6C4A6r-Bksv4-4u5FoPZ_Mpsgl0WDBIs7SvnWp_KFjdGE2YbLzDVa65Fy7oa67sBMo2h3JpeEiaFEAxvywPuIdItq_DHZbt7jyGEFQGbuHFlv9vvbuB8lZbFlbO9F2EbQLEDPccud-JHhWx2rxgpRkGtIytL4ghJcB5A0PDaIqSzkzi3n-fyLZUpP8tkfNzq23tj37NR26csFPuF0khXaNDTnp_vd_8sqRQiJ5NT1WNCRY1vnpu_fCPt0tDOJC25rOvHbdUw9Rt9RjCgFmVEsjKHe03R7Hw0X6uiahsVBerGv3lfEclZSa3hXpD_2A__HgK27rPYwYqdFndPoODk2yWlQMmny-WzJolL2rUoIH2bWXwdlHPzoTIt--rkxf3U1RLzMmTyOSzmWoP_3dYFMghUx13__pi66bpjRONinRD76f8t3xsNxOT4LSW8V0DKN2Tx6O98cJSU5AyR63IQ9BUIJxR93scCIMlTd1phI_K_RhJQ3-jWd7h1MU_0f9QZMGREnau5fQnR279U57nbSvSGGQUyuKcsFec1OEwzUX1ckAvZxW9eZA_UM9u2YCKlWUy6KL0eEH5qFHSFGGmfFWUBQ4S-bssvXvm_ZrPhSAl_NVkdv-ctw-wFPowQ8UP-C68HeMN2JDNQvA_6SOVzMTqF7_OfChq7rVaM0AYAng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://ni.local/user/products/11111",
+					"protocol": "http",
+					"host": [
+						"ni",
+						"local"
+					],
+					"path": [
+						"user",
+						"products",
+						"11111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NI User Products POST",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2MDM3OTIzOTcsImV4cCI6MTYwMzc5NTk5Nywicm9sZXMiOltdLCJlbWFpbCI6InRlc3RAZ21haWwuY29tIn0.ktEz6CAR4obJaaOs-YBwLodLSveBwLA2FRbbt4wAgfx2LJl-vDsZpzS9s3AVRuLS2zxy6mbcHuvEKxGJrVeFqC0NRMm_B2FINib60hDZZVpQ3XAKnWzKSGyYVYUYqBOKi4h2R8kSEyxyOl7j4mr1YAbxLkTgFvI34epmS2gfyUHcQipluakb1I5GHwnHf7harxjZkvykWeGHuIvGXfw2uWD_C_IWjfj7YKTl7LkuS1gc_GP09Ukee1jUa2fjXMxVdbGJ3PmS4twyz1dd_EF6-C09CvJzHXR6cPIyQjYoRwZhXRiL7Ol7oD0wFRYUK91hHXjrKTV5gAXpDfSAVpLdXmVwVaG0_95nwxv-aVIicDG8gTKhokn3qaNcJlMBAU8HQ-ktNYCwWs41H7swWLuuQ4_gKDt7XY0OgVGtHF8z0RqiwkIv3tbvz8r5tIa1DN3oC2lA258WtDNkIInWO_pUejW2mq5yyDly_8XLPLO2AYqMx2k7zz0Cj0C55L7e8pimXJy9Q1shhJbK7o1di9u7Ltv-G6rXR6L_cctQ8p_HuBuPtYKMn-KBO5EFIyWq6X9ls-ogpToIVwelPvFnzlyn15NtegNu8JZ8lI0QTMgKgR5IXetvef_4ulzceODcvbvyeTTOu3LXzeOJDFIpXAyjREYulZmoqJr3Y7mrozrnRmg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"test@gmail.com\",\"password\":\"password\"}"
+				},
+				"url": {
+					"raw": "http://ni.local/user/products",
+					"protocol": "http",
+					"host": [
+						"ni",
+						"local"
+					],
+					"path": [
+						"user",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
