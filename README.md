@@ -4,7 +4,7 @@ Here is my solution for the coding challenge. I could have used CSV parser for t
 
 ## Installation
 
-1. Build/run containers with (with and without detached mode)
+1. Build/run containers
 
     ```bash
     $ docker-compose build
