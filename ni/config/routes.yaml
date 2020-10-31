@@ -1,0 +1,14 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+api_auth:
+    path: /auth
+    methods:  [POST]
+
+#api:
+#    resource: ../src/Controller/
+#    type:     annotation
+#    prefix:   /
+api:
+    prefix: /
+    resource: '../src/Controller'

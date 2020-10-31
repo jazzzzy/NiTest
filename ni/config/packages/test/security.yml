@@ -1,0 +1,32 @@
+security:
+    encoders:
+        App\Entity\User: plaintext
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        api_auth:
+            pattern:  ^/auth
+            stateless: true
+            anonymous: true
+            json_login:
+                provider: auth_user_provider
+                check_path: /auth
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+                username_path: email
+            provider: auth_user_provider
+        product:
+            pattern: ^/products
+            security: false
+            stateless: true
+            anonymous: true
+        api:
+            pattern: ^/user
+            security: false
+            stateless: true
+            anonymous: true
+        main:
+            anonymous: lazy
+            provider: auth_user_provider

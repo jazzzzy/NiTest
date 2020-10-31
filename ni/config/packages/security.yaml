@@ -1,0 +1,47 @@
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        App\Entity\User: plaintext
+
+    providers:
+        auth_user_provider:
+          entity:
+            class: 'App\Entity\User'
+            property: 'email'
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        api_auth:
+            pattern:  ^/auth
+            stateless: true
+            anonymous: true
+            json_login:
+                provider: auth_user_provider
+                check_path: /auth
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+                username_path: email
+            provider: auth_user_provider
+        product:
+            pattern: ^/products
+            security: false
+            stateless: true
+            anonymous: true
+        api:
+            pattern: ^/
+            stateless: true
+            anonymous: false
+            provider: auth_user_provider
+            guard:
+                authenticators:
+                    - lexik_jwt_authentication.jwt_token_authenticator
+        main:
+            anonymous: lazy
+            provider: auth_user_provider
+
+    access_control:
+        - { path: ^/user, role: IS_AUTHENTICATED_FULLY }
+        - { path: ^/products, role: IS_AUTHENTICATED_ANONYMOUSLY}
+        - { path: ^/auth, role: IS_AUTHENTICATED_ANONYMOUSLY}
