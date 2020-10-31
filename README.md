@@ -37,12 +37,14 @@ Here is my solution for the coding challenge. I could have used CSV parser for t
 
     Login in the container
     
-    Behat: vendor/bin/behat
-    Unit: vendor/bin/phpunit
+    For behat run : 
+    `vendor/bin/behat`
+    
+    For unit testing run: `vendor/bin/phpunit`
     
 ## Usage
 
-1. The usable endpoints as requested:
+The usable endpoints as requested:
     
 * GET /products
 * POST /auth
@@ -51,18 +53,18 @@ Here is my solution for the coding challenge. I could have used CSV parser for t
 * POST /user/products
 * DELETE /user/products/{SKU}
 
-2. To test the API e2e
+To test the API e2e:
 
-    Import the NI.postman_collection.json in Postman
+Import the NI.postman_collection.json in Postman
     
 ## What more I could add?
 
-    1. Isolate test database.
-    2. Finish functional testing
-    2. JWT private/public keys should not be committed but generated on first deployment
-    3. Validation (eg.: payload / id could be validated)
-    4. Caching (Doctrine or memcache, maybe Redis)
-    5. Migration instead of import command
-    6. Improved logging
-    7. and many more
+1. Isolate test database.
+2. Finish functional testing
+2. JWT private/public keys should not be committed but generated on first deployment
+3. Validation (eg.: payload / id could be validated)
+4. Caching (Doctrine or memcache, maybe Redis)
+5. Migration instead of import command
+6. Improved logging
+7. and many more
     
