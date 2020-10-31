@@ -40,15 +40,27 @@ Here is my solution for the coding challenge. I could have used CSV parser for t
     Behat: vendor/bin/behat
     Unit: vendor/bin/phpunit
     
-5. To test the API e2e
+## Usage
+
+1. The usable endpoints as requested:
+    
+* GET /products
+* POST /auth
+* GET /user
+* GET /user/products
+* POST /user/products
+* DELETE /user/products/{SKU}
+
+2. To test the API e2e
 
     Import the NI.postman_collection.json in Postman
     
-6. What more I could add?
+## What more I could add?
 
     1. Isolate test database.
+    2. Finish functional testing
     2. JWT private/public keys should not be committed but generated on first deployment
-    3. Validation (id could be validated)
+    3. Validation (eg.: payload / id could be validated)
     4. Caching (Doctrine or memcache, maybe Redis)
     5. Migration instead of import command
     6. Improved logging

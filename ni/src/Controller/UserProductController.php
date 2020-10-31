@@ -33,16 +33,16 @@ class UserProductController extends AbstractController
     }
 
     /**
-     * @Route("/user/products/{id}", methods={"DELETE"})
+     * @Route("/user/products/{sku}", methods={"DELETE"})
      */
-    public function deleteUserProduct($id, UserProductHandler $userProductHandler)
+    public function deleteUserProduct($sku, UserProductHandler $userProductHandler)
     {
         try {
             /** @var User $user */
             $user = $this->getUser();
 
             /** @var UserProductHandler $productHandler */
-            $products = $userProductHandler->deleteUserProduct($user, $id);
+            $products = $userProductHandler->deleteUserProduct($user, $sku);
         } catch (\Exception $e) {
             return new ErrorResponse($e);
         }

@@ -41,14 +41,13 @@ class UserProductHandler
 
     /**
      * @param User $user
-     * @param int $id
-     *
+     * @param string $sku
      * @return array
      * @throws NotFoundException
      */
-    public function deleteUserProduct(User $user, int $id): array
+    public function deleteUserProduct(User $user, string $sku): array
     {
-        $product = $this->entityManager->getRepository(Product::class)->find($id);
+        $product = $this->entityManager->getRepository(Product::class)->findOneBy(['sku' => $sku]);
         $products = $user->getProducts();
 
         if ( !$products->contains($product) ) {

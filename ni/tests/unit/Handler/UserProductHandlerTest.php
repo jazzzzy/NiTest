@@ -106,7 +106,7 @@ final class UserProductHandlerTest extends TestCase
         $user->addProduct($product2);
 
         $this->entityManager->expects($this->once())->method('getRepository')->willReturn($this->repository);
-        $this->repository->expects($this->once())->method('find')->willReturn($product1);
+        $this->repository->expects($this->once())->method('findOneBy')->willReturn($product1);
         $this->entityManager->expects($this->once())->method('flush');
 
         $this->normalizer->expects($this->once())
@@ -128,7 +128,7 @@ final class UserProductHandlerTest extends TestCase
         $user->addProduct($product1);
 
         $this->entityManager->expects($this->once())->method('getRepository')->willReturn($this->repository);
-        $this->repository->expects($this->once())->method('find')->willReturn($product2);
+        $this->repository->expects($this->once())->method('findOneBy')->willReturn($product2);
 
         $this->expectException(NotFoundException::class);
         $this->expectExceptionMessage('The user has no such product');
