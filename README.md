@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# NiTest
-=======
 ## Intro
 
 Here is my solution for the coding challenge. I could have used CSV parser for the import and API Platform for easily defining API resources but then where is the fun. On the other hand, this way you have a decent amount of codebase to assess my knowledge.
@@ -71,4 +68,3 @@ Import the NI.postman_collection.json in Postman
 6. Improved logging
 7. and many more
     
->>>>>>> a5a2e646f7407e7ee518a9c3e9824df0c85d3b4e
