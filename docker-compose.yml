@@ -3,8 +3,9 @@ version: '2'
 services:
     db:
         image: mysql
-        volumes:
-            - "./.data/db:/var/lib/mysql"
+## IF YOU WANT TO USE SQL CLIENT
+#        volumes:
+#            - "./.data/db:/var/lib/mysql"
         environment:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             MYSQL_DATABASE: ${MYSQL_DATABASE}
