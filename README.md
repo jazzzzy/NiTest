@@ -24,7 +24,7 @@ Here is my solution for the coding challenge. I could have used CSV parser for t
     Login in the container 
     
     ```bash
-    docker exec -it ni_php_1 bash
+    docker exec -it nitest_php_1 bash
     ```
     
     and run 

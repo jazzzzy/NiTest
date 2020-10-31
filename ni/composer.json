@@ -24,7 +24,6 @@
         "behat/mink-extension": "^2.3",
         "behat/mink-goutte-driver": "^1.2",
         "behatch/contexts": "^3.3",
-        "friends-of-behat/symfony-extension": "^2.1",
         "symfony/stopwatch": "^4.4",
         "symfony/twig-bundle": "^4.4",
         "symfony/web-profiler-bundle": "^4.4"
