@@ -84,40 +84,4 @@ final class ProductHandlerTest extends TestCase
 
         $this->productHandler->getAllProducts();
     }
-
-//
-//
-//    public function testGetReturnsSuccessResponse() {
-//
-//        $dataProvider = $this->prophesize(DefaultDataProvider::class);
-//        $dataProvider->get(Recipe::class, 13)->shouldBeCalled()->willReturn(['asd']);
-//
-//        $handler = $this
-//            ->getMockBuilder(HandlerAbstract::class)
-//            ->setConstructorArgs([$dataProvider->reveal(), Recipe::class])
-//            ->getMockForAbstractClass();
-//
-//        $result = $handler->get(13);
-//
-//        self::assertInstanceOf(SuccessResponse::class, $result);
-//    }
-//
-//    public function testGetReturnsErrorResponse()
-//    {
-//        $dataProvider = $this->createMock(DefaultDataProvider::class);
-//        $dataProvider->expects($this->once())
-//            ->method('get')
-//            ->will($this->throwException(
-//                new \Exception())
-//            );
-//
-//        $handler = $this
-//            ->getMockBuilder(HandlerAbstract::class)
-//            ->setConstructorArgs([$dataProvider, Recipe::class])
-//            ->getMockForAbstractClass();
-//
-//        $result = $handler->get(13);
-//
-//        self::assertInstanceOf(ErrorResponse::class, $result);
-//    }
 }
